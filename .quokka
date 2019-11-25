@@ -1,0 +1,8 @@
+{
+  "babel": true,
+  "jsdom": {
+    "file": "src/index.html",
+    "html": "...",
+    "userAgent": "..."
+  }
+}
