@@ -8,7 +8,7 @@ import {
 
 const renderName = ({ name }) => <span>{name}</span>;
 
-const renderModelAndName = ({ model, name}) => <span>{name} ({model})</span>;
+const renderModelAndName = ({ model, name }) => <span>{name} ({ model })</span>;
 
 const mapPersonMethodsToProps = (swapiService) => {
   return {

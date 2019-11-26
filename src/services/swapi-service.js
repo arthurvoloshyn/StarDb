@@ -49,15 +49,15 @@ export default class SwapiService {
     return this._transformStarship(starship);
   };
 
-  getPersonImage = ({id}) => {
+  getPersonImage = ({ id }) => {
     return `${this._imageBase}/characters/${id}.jpg`
   };
 
-  getStarshipImage = ({id}) => {
+  getStarshipImage = ({ id }) => {
     return `${this._imageBase}/starships/${id}.jpg`
   };
 
-  getPlanetImage = ({id}) => {
+  getPlanetImage = ({ id }) => {
     return `${this._imageBase}/planets/${id}.jpg`
   };
 
