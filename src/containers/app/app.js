@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Header from '../header';
+import Header from '../../components/header';
 import RandomPlanet from '../random-planet';
-import ErrorBoundry from '../error-boundry';
+import ErrorBoundry from '../../components/error-boundry';
 import SwapiService from '../../services/swapi-service';
 import DummySwapiService from '../../services/dummy-swapi-service';
 
@@ -11,14 +11,14 @@ import {
   PlanetsPage,
   StarshipsPage,
   LoginPage,
-  SecretPage } from '../pages';
+  SecretPage } from '../../components/pages';
 
-import { SwapiServiceProvider } from '../swapi-service-context';
+import { SwapiServiceProvider } from '../../context/swapi-service-context';
 
 import './app.css';
 
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import StarshipDetails from '../sw-components/starship-details';
+import StarshipDetails from '../../components/sw-components/starship-details';
 
 export default class App extends Component {
 

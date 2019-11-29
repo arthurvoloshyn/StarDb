@@ -1,6 +1,6 @@
 import React from 'react';
-import ItemDetails, { Record } from '../item-details';
-import { withSwapiService } from '../hoc-helpers';
+import ItemDetails, { Record } from '../../containers/item-details';
+import { withSwapiService } from '../../hocs/hoc-helpers';
 
 const PersonDetails = (props) => {
   return (

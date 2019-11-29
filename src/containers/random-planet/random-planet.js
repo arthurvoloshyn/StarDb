@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Spinner from '../spinner';
-import ErrorIndicator from '../error-indicator';
+import Spinner from '../../components/spinner';
+import ErrorIndicator from '../../components/error-indicator';
 import SwapiService from '../../services/swapi-service';
 import { idPlanet } from '../../utils';
 

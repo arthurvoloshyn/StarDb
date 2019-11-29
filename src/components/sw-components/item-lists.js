@@ -4,7 +4,7 @@ import {
   withData,
   withSwapiService,
   withChildFunction,
-  compose } from '../hoc-helpers';
+  compose } from '../../hocs/hoc-helpers';
 
 const renderName = ({ name }) => <span>{name}</span>;
 
