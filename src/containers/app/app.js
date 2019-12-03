@@ -17,7 +17,7 @@ import { SwapiServiceProvider } from '../../context/swapi-service-context';
 
 import './app.css';
 
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {HashRouter as Router, Switch, Route } from 'react-router-dom';
 import StarshipDetails from '../../components/sw-components/starship-details';
 
 export default class App extends Component {
@@ -50,7 +50,7 @@ export default class App extends Component {
     return (
       <ErrorBoundry>
         <SwapiServiceProvider value={swapiService}>
-          <Router basename="/ReactStarDb/">
+          <Router>
             <div className="stardb-app">
               <Header onServiceChange={this.onServiceChange} />
               <RandomPlanet />

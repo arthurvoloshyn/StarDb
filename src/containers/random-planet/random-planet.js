@@ -48,6 +48,8 @@ export default class RandomPlanet extends Component {
       error: true,
       loading: false
     });
+
+    throw new Error(err);
   };
 
   updatePlanet = () => {

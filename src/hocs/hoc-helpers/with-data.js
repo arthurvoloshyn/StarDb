@@ -22,7 +22,7 @@ const withData = (View) => {
     }
 
     update() {
-      this.setState( {
+      this.setState({
         loading: true,
         error: false
       });
