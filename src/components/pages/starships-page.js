@@ -4,9 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import { StarshipList } from '../sw-components';
 
-const StarshipsPage = ({ history: { push } }) => {
-  return <StarshipList onItemSelected={id => push(id)} />;
-};
+const StarshipsPage = ({ history: { push } }) => <StarshipList onItemSelected={id => push(id)} />;
 
 StarshipsPage.propTypes = {
   history: PropTypes.shape({
