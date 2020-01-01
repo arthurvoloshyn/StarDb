@@ -1,16 +1,16 @@
-export default class DummySwapiService {
+import { getRandomInt } from '../utils';
 
+class DummySwapiService {
   _people = [
     {
-      id: 1,
+      id: '1',
       name: 'Bilbo Baggins [TEST DATA]',
       gender: 'male',
       birthYear: 'long ago',
       eyeColor: 'dark brown'
     },
-
     {
-      id: 2,
+      id: '2',
       name: 'Frodo Baggins [TEST DATA]',
       gender: 'male',
       birthYear: 'long ago',
@@ -20,14 +20,14 @@ export default class DummySwapiService {
 
   _planets = [
     {
-      id: 1,
+      id: '1',
       name: 'Earth [TEST DATA]',
       population: '7.530.000.000',
       rotationPeriod: '23 hours 56 seconds',
       diameter: '12.742 km'
     },
     {
-      id: 2,
+      id: '2',
       name: 'Venus [TEST DATA]',
       population: 'not known',
       rotationPeriod: '243 days',
@@ -37,7 +37,7 @@ export default class DummySwapiService {
 
   _starships = [
     {
-      id: 1,
+      id: '1',
       name: 'USS Enterprise [TEST DATA]',
       model: 'NCC-1701-C',
       manufacturer: 'Northrop Grumman Shipbuilding',
@@ -46,42 +46,46 @@ export default class DummySwapiService {
       crew: 1000,
       passengers: 50,
       cargoCapacity: 100
+    },
+    {
+      id: '2',
+      name: 'Grumman F-14 Tomcat [TEST DATA]',
+      model: 'F-14B',
+      manufacturer: 'Grumman Corporation',
+      costInCredits: 'not known',
+      length: 'approx 19.1 meters',
+      crew: 2,
+      passengers: 1,
+      cargoCapacity: 6576
     }
   ];
 
-  getAllPeople = async () => {
-    return this._people;
-  };
+  getAllPeople = async () => this._people;
 
   getPerson = async () => {
-    return this._people[0];
+    const index = getRandomInt(2);
+    return this._people[index];
   };
 
-  getAllPlanets = async () => {
-    return this._planets;
-  };
+  getAllPlanets = async () => this._planets;
 
   getPlanet = async () => {
-    return this._planets[0]
+    const index = getRandomInt(2);
+    return this._planets[index];
   };
 
-  getAllStarships = async () => {
-    return this._starships;
-  };
+  getAllStarships = async () => this._starships;
 
   getStarship = async () => {
-    return this._starships[0];
+    const index = getRandomInt(2);
+    return this._starships[index];
   };
 
-  getPersonImage = () => {
-    return `https://placeimg.com/400/500/people`
-  };
+  getPersonImage = () => `https://placeimg.com/400/500/people`;
 
-  getStarshipImage = () => {
-    return `https://placeimg.com/600/400/tech`;
-  };
+  getStarshipImage = () => `https://placeimg.com/600/400/tech`;
 
-  getPlanetImage = () => {
-    return `https://placeimg.com/400/400/nature`
-  };
+  getPlanetImage = () => `https://placeimg.com/400/400/nature`;
 }
+
+export default DummySwapiService;

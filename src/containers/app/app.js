@@ -1,30 +1,24 @@
 import React, { Component } from 'react';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Header from '../../components/header';
-import RandomPlanet from '../random-planet';
-import ErrorBoundry from '../../components/error-boundry';
 import SwapiService from '../../services/swapi-service';
 import DummySwapiService from '../../services/dummy-swapi-service';
 
-import {
-  PeoplePage,
-  PlanetsPage,
-  StarshipsPage,
-  LoginPage,
-  SecretPage } from '../../components/pages';
-
 import { SwapiServiceProvider } from '../../context/swapi-service-context';
+
+import Header from '../../components/header';
+import ErrorBoundry from '../../components/error-boundry';
+import StarshipDetails from '../../components/sw-components/starship-details';
+import { PeoplePage, PlanetsPage, StarshipsPage, LoginPage, SecretPage } from '../../components/pages';
+
+import RandomPlanet from '../random-planet';
 
 import './app.css';
 
-import {HashRouter as Router, Switch, Route } from 'react-router-dom';
-import StarshipDetails from '../../components/sw-components/starship-details';
-
-export default class App extends Component {
-
+class App extends Component {
   state = {
     swapiService: new SwapiService(),
-    isLoggedIn: false,
+    isLoggedIn: false
   };
 
   onLogin = () => {
@@ -35,8 +29,7 @@ export default class App extends Component {
 
   onServiceChange = () => {
     this.setState(({ swapiService }) => {
-      const Service = swapiService instanceof SwapiService ?
-                        DummySwapiService : SwapiService;
+      const Service = swapiService instanceof SwapiService ? DummySwapiService : SwapiService;
       return {
         swapiService: new Service()
       };
@@ -44,7 +37,6 @@ export default class App extends Component {
   };
 
   render() {
-
     const { isLoggedIn, swapiService } = this.state;
 
     return (
@@ -56,35 +48,25 @@ export default class App extends Component {
               <RandomPlanet />
 
               <Switch>
-                <Route path="/"
-                       render={() => <h2 className="text-center">Welcome to StarDB</h2>}
-                       exact />
+                <Route path="/" render={() => <h2 className="text-center">Welcome to StarDB</h2>} exact />
                 <Route path="/people/:id?" component={PeoplePage} />
                 <Route path="/planets" component={PlanetsPage} />
                 <Route path="/starships" exact component={StarshipsPage} />
-                <Route path="/starships/:id"
-                       render={({ match }) => {
-                         const { id } = match.params;
-                         return <StarshipDetails itemId={id} />
-                       }}/>
-
                 <Route
-                  path="/login"
-                  render={() => (
-                    <LoginPage
-                      isLoggedIn={isLoggedIn}
-                      onLogin={this.onLogin}/>
-                  )}/>
+                  path="/starships/:id"
+                  render={({
+                    match: {
+                      params: { id }
+                    }
+                  }) => <StarshipDetails itemId={id} />}
+                />
 
-                <Route
-                  path="/secret"
-                  render={() => (
-                    <SecretPage isLoggedIn={isLoggedIn} />
-                  )}/>
+                <Route path="/login" render={() => <LoginPage isLoggedIn={isLoggedIn} onLogin={this.onLogin} />} />
+
+                <Route path="/secret" render={() => <SecretPage isLoggedIn={isLoggedIn} />} />
 
                 <Route render={() => <h2 className="text-center">Page not found</h2>} />
               </Switch>
-
             </div>
           </Router>
         </SwapiServiceProvider>
@@ -92,3 +74,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default App;

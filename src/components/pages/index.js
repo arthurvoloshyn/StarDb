@@ -4,10 +4,4 @@ import StarshipsPage from './starships-page';
 import LoginPage from './login-page';
 import SecretPage from './secret-page';
 
-export {
-  PeoplePage,
-  PlanetsPage,
-  StarshipsPage,
-  LoginPage,
-  SecretPage
-};
+export { PeoplePage, PlanetsPage, StarshipsPage, LoginPage, SecretPage };

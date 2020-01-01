@@ -1,9 +1,13 @@
 import React from 'react';
 
-const withChildFunction = (fn) => (Wrapped) => (props => (
-  <Wrapped {...props}>
-    {fn}
-  </Wrapped>
-));
+import { getDisplayName } from '../../utils';
+
+const withChildFunction = fn => Wrapped => {
+  const withChildFunction = props => <Wrapped {...props}>{fn}</Wrapped>;
+
+  withChildFunction.displayName = `withChildFunction(${getDisplayName(Wrapped)})`;
+
+  return withChildFunction;
+};
 
 export default withChildFunction;

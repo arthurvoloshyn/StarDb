@@ -1,9 +1,14 @@
 .error-indicator {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   color: #c78f22;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  margin-right: -50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .error-indicator img {
@@ -12,4 +17,8 @@
 
 .error-indicator .boom {
   font-size: 1.7rem;
+}
+
+.error-indicator button {
+  margin-top: 1rem;
 }

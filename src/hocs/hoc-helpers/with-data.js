@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import { getDisplayName } from '../../utils';
+
 import Spinner from '../../components/spinner';
 import ErrorIndicator from '../../components/error-indicator';
 
-const withData = (View) => {
-  return class extends Component {
-
+const withData = View => {
+  class withData extends Component {
     state = {
       data: null,
       loading: true,
       error: false
     };
 
-    componentDidUpdate(prevProps) {
-      if (this.props.getData !== prevProps.getData) {
+    componentDidUpdate({ getData }) {
+      const { getData: propsGetData } = this.props;
+
+      if (propsGetData !== getData) {
         this.update();
       }
     }
@@ -22,13 +27,15 @@ const withData = (View) => {
     }
 
     update() {
+      const { getData } = this.props;
+
       this.setState({
         loading: true,
         error: false
       });
 
-      this.props.getData()
-        .then((data) => {
+      getData()
+        .then(data => {
           this.setState({
             data,
             loading: false
@@ -42,8 +49,8 @@ const withData = (View) => {
         });
     }
 
-
     render() {
+      const { props } = this;
       const { data, loading, error } = this.state;
 
       if (loading) {
@@ -54,9 +61,21 @@ const withData = (View) => {
         return <ErrorIndicator />;
       }
 
-      return <View {...this.props} data={data} />;
+      return <View {...props} data={data} />;
     }
+  }
+
+  withData.defaultProps = {
+    getData: () => {}
   };
+
+  withData.propTypes = {
+    getData: PropTypes.func
+  };
+
+  withData.displayName = `withData(${getDisplayName(View)})`;
+
+  return withData;
 };
 
 export default withData;

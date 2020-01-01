@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
 const SecretPage = ({ isLoggedIn }) => {
-
   if (isLoggedIn) {
     return (
       <div className="jumbotron text-center">
@@ -12,7 +12,14 @@ const SecretPage = ({ isLoggedIn }) => {
   }
 
   return <Redirect to="/login" />;
+};
 
+SecretPage.propTypes = {
+  isLoggedIn: PropTypes.bool
+};
+
+SecretPage.defaultProps = {
+  isLoggedIn: false
 };
 
 export default SecretPage;

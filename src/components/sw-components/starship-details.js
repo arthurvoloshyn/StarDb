@@ -1,22 +1,26 @@
 import React from 'react';
-import ItemDetails, { Record } from '../../containers/item-details';
+
+import { details } from '../../utils';
+
 import { withSwapiService } from '../../hocs/hoc-helpers';
 
-const StarshipDetails = (props) => {
-  return (
-    <ItemDetails {...props}>
-      <Record field="model" label="Model" />
-      <Record field="length" label="Length" />
-      <Record field="costInCredits" label="Cost" />
-    </ItemDetails>
-  );
-};
+import ItemDetails from '../../containers/item-details';
 
-const mapMethodsToProps = (swapiService) => {
-  return {
-    getData: swapiService.getStarship,
-    getImageUrl: swapiService.getStarshipImage
-  }
-};
+import Record from '../record';
+
+const { starships } = details;
+
+const StarshipDetails = props => (
+  <ItemDetails {...props}>
+    {starships.map(({ field, label }) => (
+      <Record key={field} field={field} label={label} />
+    ))}
+  </ItemDetails>
+);
+
+const mapMethodsToProps = ({ getStarship, getStarshipImage }) => ({
+  getData: getStarship,
+  getImageUrl: getStarshipImage
+});
 
 export default withSwapiService(mapMethodsToProps)(StarshipDetails);
