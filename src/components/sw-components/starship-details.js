@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { details } from '../../utils';
+import { details } from '../../constants';
 
 import { withSwapiService } from '../../hocs/hoc-helpers';
 
