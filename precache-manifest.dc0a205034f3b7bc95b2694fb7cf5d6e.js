@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/ReactStarDb/static/js/runtime~main.8170ac29.js"
   },
   {
-    "revision": "51ffb0e2a08b200d1a79",
-    "url": "/ReactStarDb/static/js/main.98724250.chunk.js"
+    "revision": "0fbbbbbb1eeb66993644",
+    "url": "/ReactStarDb/static/js/main.1e850303.chunk.js"
   },
   {
     "revision": "5dd53827c28192dc8545",
     "url": "/ReactStarDb/static/js/2.e5c75611.chunk.js"
   },
   {
-    "revision": "51ffb0e2a08b200d1a79",
+    "revision": "0fbbbbbb1eeb66993644",
     "url": "/ReactStarDb/static/css/main.e7690d5a.chunk.css"
   },
   {
-    "revision": "ef18f63d7be3e4cfab729532c376b401",
+    "revision": "15c69ff341fc7cdf32a47d0b46cc8b48",
     "url": "/ReactStarDb/index.html"
   }
 ];
