@@ -14,10 +14,11 @@ const withData = View => {
       error: false
     };
 
-    componentDidUpdate({ getData }) {
-      const { getData: propsGetData } = this.props;
+    componentDidUpdate(prevProps) {
+      const { getData: prevPropsGetData } = prevProps;
+      const { getData } = this.props;
 
-      if (propsGetData !== getData) {
+      if (getData !== prevPropsGetData) {
         this.update();
       }
     }
