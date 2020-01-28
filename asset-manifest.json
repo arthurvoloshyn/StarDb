@@ -1,13 +1,13 @@
 {
-  "main.css": "/ReactStarDb/static/css/main.14f78e29.chunk.css",
-  "main.js": "/ReactStarDb/static/js/main.173ef424.chunk.js",
-  "main.js.map": "/ReactStarDb/static/js/main.173ef424.chunk.js.map",
-  "runtime~main.js": "/ReactStarDb/static/js/runtime~main.8170ac29.js",
-  "runtime~main.js.map": "/ReactStarDb/static/js/runtime~main.8170ac29.js.map",
-  "static/js/2.e5c75611.chunk.js": "/ReactStarDb/static/js/2.e5c75611.chunk.js",
-  "static/js/2.e5c75611.chunk.js.map": "/ReactStarDb/static/js/2.e5c75611.chunk.js.map",
-  "index.html": "/ReactStarDb/index.html",
-  "precache-manifest.7f7b9f016817e19f7466ecba0f13df25.js": "/ReactStarDb/precache-manifest.7f7b9f016817e19f7466ecba0f13df25.js",
-  "service-worker.js": "/ReactStarDb/service-worker.js",
-  "static/css/main.14f78e29.chunk.css.map": "/ReactStarDb/static/css/main.14f78e29.chunk.css.map"
+  "main.css": "/StarDb/static/css/main.e7690d5a.chunk.css",
+  "main.js": "/StarDb/static/js/main.ab21b171.chunk.js",
+  "main.js.map": "/StarDb/static/js/main.ab21b171.chunk.js.map",
+  "runtime~main.js": "/StarDb/static/js/runtime~main.6291c308.js",
+  "runtime~main.js.map": "/StarDb/static/js/runtime~main.6291c308.js.map",
+  "static/js/2.e5c75611.chunk.js": "/StarDb/static/js/2.e5c75611.chunk.js",
+  "static/js/2.e5c75611.chunk.js.map": "/StarDb/static/js/2.e5c75611.chunk.js.map",
+  "index.html": "/StarDb/index.html",
+  "precache-manifest.37a08e29189d30ce137576d2ec90d440.js": "/StarDb/precache-manifest.37a08e29189d30ce137576d2ec90d440.js",
+  "service-worker.js": "/StarDb/service-worker.js",
+  "static/css/main.e7690d5a.chunk.css.map": "/StarDb/static/css/main.e7690d5a.chunk.css.map"
 }
