@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './error-button.css';
+
 class ErrorButton extends Component {
   state = {
     renderError: false
@@ -16,7 +18,7 @@ class ErrorButton extends Component {
     }
 
     return (
-      <button className="error-button btn btn-danger btn-lg" onClick={this.renderError}>
+      <button className="error-button btn btn-lg" onClick={this.renderError}>
         Throw Error
       </button>
     );

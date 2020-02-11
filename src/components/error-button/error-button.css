@@ -1,0 +1,9 @@
+.error-button {
+  background-color: #d04737;
+  border-color: #d04737;
+}
+
+.error-button:hover {
+  background-color: #e12e1c;
+  border-color: #d62c1a;
+}
