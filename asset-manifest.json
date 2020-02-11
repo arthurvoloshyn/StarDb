@@ -1,5 +1,5 @@
 {
-  "main.css": "/StarDb/static/css/main.0faf9a8a.chunk.css",
+  "main.css": "/StarDb/static/css/main.886218fd.chunk.css",
   "main.js": "/StarDb/static/js/main.f0ae8022.chunk.js",
   "main.js.map": "/StarDb/static/js/main.f0ae8022.chunk.js.map",
   "runtime~main.js": "/StarDb/static/js/runtime~main.6291c308.js",
@@ -7,7 +7,7 @@
   "static/js/2.e5c75611.chunk.js": "/StarDb/static/js/2.e5c75611.chunk.js",
   "static/js/2.e5c75611.chunk.js.map": "/StarDb/static/js/2.e5c75611.chunk.js.map",
   "index.html": "/StarDb/index.html",
-  "precache-manifest.6290fefc9e72636e1e7cd2f2e2b8a14b.js": "/StarDb/precache-manifest.6290fefc9e72636e1e7cd2f2e2b8a14b.js",
+  "precache-manifest.3a5a37b1b9d3319c113f8a5ed4a3ead5.js": "/StarDb/precache-manifest.3a5a37b1b9d3319c113f8a5ed4a3ead5.js",
   "service-worker.js": "/StarDb/service-worker.js",
-  "static/css/main.0faf9a8a.chunk.css.map": "/StarDb/static/css/main.0faf9a8a.chunk.css.map"
+  "static/css/main.886218fd.chunk.css.map": "/StarDb/static/css/main.886218fd.chunk.css.map"
 }
