@@ -11,6 +11,7 @@ const Header = ({ onServiceChange }) => (
     <h3>
       <Link to="/">StarDB</Link>
     </h3>
+
     <ul className="d-flex">
       {pages.map(({ link, title }) => (
         <li key={title}>
