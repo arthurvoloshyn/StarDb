@@ -8,7 +8,7 @@ import { SwapiServiceProvider } from '../../context/swapi-service-context';
 
 import Header from '../../components/header';
 import ErrorBoundry from '../../components/error-boundry';
-import StarshipDetails from '../../components/sw-components/starship-details';
+import StarshipDetails from '../../components/hoc-components/starship-details';
 import { PeoplePage, PlanetsPage, StarshipsPage, LoginPage, SecretPage } from '../../components/pages';
 
 import RandomPlanet from '../random-planet';

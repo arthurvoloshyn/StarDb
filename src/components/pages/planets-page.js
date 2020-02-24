@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { PlanetDetails, PlanetList } from '../sw-components';
+import { PlanetDetails, PlanetList } from '../hoc-components';
 import Row from '../row';
 
 class PlanetsPage extends Component {

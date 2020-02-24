@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-import { StarshipList } from '../sw-components';
+import { StarshipList } from '../hoc-components';
 
 const StarshipsPage = ({ history: { push } }) => <StarshipList onItemSelected={id => push(id)} />;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PlanetView = ({ planet: { id, name, population, rotationPeriod, diameter } }) => (
-  <React.Fragment>
+  <>
     <img className="planet-image" src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="planet" />
     <div>
       <h4>{name}</h4>
@@ -21,7 +21,7 @@ const PlanetView = ({ planet: { id, name, population, rotationPeriod, diameter }
         </li>
       </ul>
     </div>
-  </React.Fragment>
+  </>
 );
 
 PlanetView.propTypes = {

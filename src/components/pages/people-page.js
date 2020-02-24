@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-import { PersonDetails, PersonList } from '../sw-components';
+import { PersonDetails, PersonList } from '../hoc-components';
 import Row from '../row';
 
 const PeoplePage = ({
