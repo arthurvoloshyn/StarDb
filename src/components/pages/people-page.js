@@ -6,11 +6,11 @@ import { PersonDetails, PersonList } from '../hoc-components';
 import Row from '../row';
 
 const PeoplePage = ({
-  history: { push },
+  history,
   match: {
     params: { id }
   }
-}) => <Row left={<PersonList onItemSelected={id => push(id)} />} right={<PersonDetails itemId={id} />} />;
+}) => <Row left={<PersonList onItemSelected={id => history.push(id)} />} right={<PersonDetails itemId={id} />} />;
 
 PeoplePage.propTypes = {
   history: PropTypes.shape({
