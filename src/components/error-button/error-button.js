@@ -13,6 +13,7 @@ class ErrorButton extends Component {
 
   render() {
     const { renderError } = this.state;
+
     if (renderError) {
       throw new Error('Error!');
     }

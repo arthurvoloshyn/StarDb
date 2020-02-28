@@ -6,6 +6,20 @@ import ErrorButton from '../../components/error-button/error-button';
 import './item-details.css';
 
 class ItemDetails extends Component {
+  static propTypes = {
+    itemId: PropTypes.string,
+    getData: PropTypes.func,
+    getImageUrl: PropTypes.func,
+    children: PropTypes.array
+  };
+
+  static defaultProps = {
+    itemId: '',
+    getData: () => {},
+    getImageUrl: () => {},
+    children: []
+  };
+
   state = {
     item: null,
     image: null
@@ -61,19 +75,5 @@ class ItemDetails extends Component {
     );
   }
 }
-
-ItemDetails.propTypes = {
-  itemId: PropTypes.string,
-  getData: PropTypes.func,
-  getImageUrl: PropTypes.func,
-  children: PropTypes.array
-};
-
-ItemDetails.defaultProps = {
-  itemId: '',
-  getData: () => {},
-  getImageUrl: () => {},
-  children: []
-};
 
 export default ItemDetails;

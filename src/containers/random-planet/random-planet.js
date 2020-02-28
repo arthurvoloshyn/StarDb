@@ -12,6 +12,14 @@ import PlanetView from '../../components/planet-view';
 import './random-planet.css';
 
 class RandomPlanet extends Component {
+  static defaultProps = {
+    updateInterval: 10000
+  };
+
+  static propTypes = {
+    updateInterval: PropTypes.number
+  };
+
   swapiService = new SwapiService();
 
   state = {
@@ -68,13 +76,5 @@ class RandomPlanet extends Component {
     );
   }
 }
-
-RandomPlanet.defaultProps = {
-  updateInterval: 10000
-};
-
-RandomPlanet.propTypes = {
-  updateInterval: PropTypes.number
-};
 
 export default RandomPlanet;

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import { StarshipList } from '../hoc-components';
 
-const StarshipsPage = ({ history: { push } }) => <StarshipList onItemSelected={id => push(id)} />;
+const StarshipsPage = ({ history }) => <StarshipList onItemSelected={id => history.push(id)} />;
 
 StarshipsPage.propTypes = {
   history: PropTypes.shape({

@@ -7,7 +7,17 @@ import Spinner from '../../components/spinner';
 import ErrorIndicator from '../../components/error-indicator';
 
 const withData = View => {
-  class withData extends Component {
+  return class withData extends Component {
+    static defaultProps = {
+      getData: () => {}
+    };
+
+    static propTypes = {
+      getData: PropTypes.func
+    };
+
+    static displayName = `withData(${getDisplayName(View)})`;
+
     state = {
       data: null,
       loading: true,
@@ -64,19 +74,7 @@ const withData = View => {
 
       return <View {...props} data={data} />;
     }
-  }
-
-  withData.defaultProps = {
-    getData: () => {}
   };
-
-  withData.propTypes = {
-    getData: PropTypes.func
-  };
-
-  withData.displayName = `withData(${getDisplayName(View)})`;
-
-  return withData;
 };
 
 export default withData;
