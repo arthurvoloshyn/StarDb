@@ -8,8 +8,7 @@ import { SwapiServiceProvider } from '../../context/swapi-service-context';
 
 import Header from '../../components/header';
 import ErrorBoundry from '../../components/error-boundry';
-import StarshipDetails from '../../components/hoc-components/starship-details';
-import { PeoplePage, PlanetsPage, StarshipsPage, LoginPage, SecretPage } from '../../components/pages';
+import { PeoplePage, PlanetsPage, StarshipsPage, LoginPage, SecretPage, HomePage, NotFound, StarshipPage } from '../../components/pages';
 
 import RandomPlanet from '../random-planet';
 
@@ -36,8 +35,18 @@ class App extends Component {
     });
   };
 
+  renderLoginPage = () => {
+    const { isLoggedIn } = this.state;
+    return <LoginPage isLoggedIn={isLoggedIn} onLogin={this.onLogin} />;
+  };
+
+  renderSecret = () => {
+    const { isLoggedIn } = this.state;
+    return <SecretPage isLoggedIn={isLoggedIn} />;
+  };
+
   render() {
-    const { isLoggedIn, swapiService } = this.state;
+    const { swapiService } = this.state;
 
     return (
       <ErrorBoundry>
@@ -46,26 +55,15 @@ class App extends Component {
             <div className="stardb-app">
               <Header onServiceChange={this.onServiceChange} />
               <RandomPlanet />
-
               <Switch>
-                <Route path="/" render={() => <h2 className="text-center">Welcome to StarDB</h2>} exact />
+                <Route path="/" render={HomePage} exact />
                 <Route path="/people/:id?" component={PeoplePage} />
                 <Route path="/planets" component={PlanetsPage} />
                 <Route path="/starships" exact component={StarshipsPage} />
-                <Route
-                  path="/starships/:id"
-                  render={({
-                    match: {
-                      params: { id }
-                    }
-                  }) => <StarshipDetails itemId={id} />}
-                />
-
-                <Route path="/login" render={() => <LoginPage isLoggedIn={isLoggedIn} onLogin={this.onLogin} />} />
-
-                <Route path="/secret" render={() => <SecretPage isLoggedIn={isLoggedIn} />} />
-
-                <Route render={() => <h2 className="text-center">Page not found</h2>} />
+                <Route path="/starships/:id" render={StarshipPage} />
+                <Route path="/login" render={this.renderLoginPage} />
+                <Route path="/secret" render={this.renderSecret} />
+                <Route render={NotFound} />
               </Switch>
             </div>
           </Router>

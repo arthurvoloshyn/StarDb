@@ -1,5 +1,3 @@
-import { getRandomInt } from '../utils';
-
 class DummySwapiService {
   _people = [
     {
@@ -62,24 +60,15 @@ class DummySwapiService {
 
   getAllPeople = async () => this._people;
 
-  getPerson = async () => {
-    const index = getRandomInt(2);
-    return this._people[index];
-  };
+  getPerson = async index => this._people[index - 1];
 
   getAllPlanets = async () => this._planets;
 
-  getPlanet = async () => {
-    const index = getRandomInt(2);
-    return this._planets[index];
-  };
+  getPlanet = async index => this._planets[index - 1];
 
   getAllStarships = async () => this._starships;
 
-  getStarship = async () => {
-    const index = getRandomInt(2);
-    return this._starships[index];
-  };
+  getStarship = async index => this._starships[index - 1];
 
   getPersonImage = () => 'https://placeimg.com/400/500/people';
 

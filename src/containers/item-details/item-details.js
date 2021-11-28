@@ -5,19 +5,23 @@ import ErrorButton from '../../components/error-button/error-button';
 
 import './item-details.css';
 
+import defaultImgSrc from '../../images/placeholder-600x400.png';
+
 class ItemDetails extends Component {
   static propTypes = {
     itemId: PropTypes.string,
     getData: PropTypes.func,
     getImageUrl: PropTypes.func,
-    children: PropTypes.array
+    children: PropTypes.array,
+    defaultImgSrc: PropTypes.string
   };
 
   static defaultProps = {
     itemId: '',
     getData: () => {},
     getImageUrl: () => {},
-    children: []
+    children: [],
+    defaultImgSrc
   };
 
   state = {
@@ -38,7 +42,7 @@ class ItemDetails extends Component {
     }
   }
 
-  updateItem() {
+  updateItem = () => {
     const { itemId, getData, getImageUrl } = this.props;
     if (!itemId) {
       return;
@@ -50,7 +54,12 @@ class ItemDetails extends Component {
         image: getImageUrl(item)
       });
     });
-  }
+  };
+
+  setDefaultImgSrc = () => {
+    const { defaultImgSrc } = this.props;
+    this.setState({ image: defaultImgSrc });
+  };
 
   render() {
     const { item, image } = this.state;
@@ -64,7 +73,7 @@ class ItemDetails extends Component {
 
     return (
       <div className="item-details card">
-        <img className="item-image" src={image} alt="item" />
+        <img className="item-image" src={image} alt="item" onError={this.setDefaultImgSrc} />
 
         <div className="card-body">
           <h4>{name}</h4>

@@ -37,7 +37,7 @@ const withData = View => {
       this.update();
     }
 
-    update() {
+    update = () => {
       const { getData } = this.props;
 
       this.setState({
@@ -58,7 +58,7 @@ const withData = View => {
             loading: false
           });
         });
-    }
+    };
 
     render() {
       const { props } = this;
