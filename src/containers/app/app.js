@@ -7,7 +7,7 @@ import DummySwapiService from '../../services/dummy-swapi-service';
 import { SwapiServiceProvider } from '../../context/swapi-service-context';
 
 import Header from '../../components/header';
-import ErrorBoundry from '../../components/error-boundry';
+import ErrorBoundary from '../../components/error-boundary';
 import { PeoplePage, PlanetsPage, StarshipsPage, LoginPage, SecretPage, HomePage, NotFound, StarshipPage } from '../../components/pages';
 
 import RandomPlanet from '../random-planet';
@@ -49,7 +49,7 @@ class App extends Component {
     const { swapiService } = this.state;
 
     return (
-      <ErrorBoundry>
+      <ErrorBoundary>
         <SwapiServiceProvider value={swapiService}>
           <Router>
             <div className="stardb-app">
@@ -68,7 +68,7 @@ class App extends Component {
             </div>
           </Router>
         </SwapiServiceProvider>
-      </ErrorBoundry>
+      </ErrorBoundary>
     );
   }
 }

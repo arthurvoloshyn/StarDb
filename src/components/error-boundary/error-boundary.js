@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import ErrorIndicator from '../error-indicator/error-indicator';
 
-class ErrorBoundry extends Component {
+class ErrorBoundary extends Component {
   static propTypes = {
     children: PropTypes.element
   };
@@ -34,4 +34,4 @@ class ErrorBoundry extends Component {
   }
 }
 
-export default ErrorBoundry;
+export default ErrorBoundary;

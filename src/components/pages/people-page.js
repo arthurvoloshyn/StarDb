@@ -10,7 +10,10 @@ const PeoplePage = ({
   match: {
     params: { id }
   }
-}) => <Row left={<PersonList onItemSelected={id => history.push(id)} />} right={<PersonDetails itemId={id} />} />;
+}) => {
+  const handleItemSelected = id => history.push(id);
+  return <Row left={<PersonList onItemSelected={handleItemSelected} />} right={<PersonDetails itemId={id} />} />;
+};
 
 PeoplePage.propTypes = {
   history: PropTypes.shape({

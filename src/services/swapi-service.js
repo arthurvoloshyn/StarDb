@@ -10,9 +10,7 @@ export default class SwapiService {
       throw new Error(`Could not fetch ${url}, received ${status}`);
     }
 
-    const data = await res.json();
-
-    return data;
+    return res.json();
   };
 
   getAllPeople = async () => {

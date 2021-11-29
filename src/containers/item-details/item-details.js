@@ -42,17 +42,17 @@ class ItemDetails extends Component {
     }
   }
 
-  updateItem = () => {
+  updateItem = async () => {
     const { itemId, getData, getImageUrl } = this.props;
     if (!itemId) {
       return;
     }
 
-    getData(itemId).then(item => {
-      this.setState({
-        item,
-        image: getImageUrl(item)
-      });
+    const item = await getData(itemId);
+
+    this.setState({
+      item,
+      image: getImageUrl(item)
     });
   };
 

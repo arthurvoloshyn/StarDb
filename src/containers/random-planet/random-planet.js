@@ -40,25 +40,27 @@ class RandomPlanet extends Component {
   onPlanetLoaded = planet => {
     this.setState({
       planet,
-      loading: false,
       error: false
     });
   };
 
   onError = err => {
     this.setState({
-      error: true,
-      loading: false
+      error: true
     });
 
     throw new Error(err);
   };
 
-  updatePlanet = () => {
-    this.swapiService
-      .getPlanet(idPlanet)
-      .then(this.onPlanetLoaded)
-      .catch(this.onError);
+  updatePlanet = async () => {
+    try {
+      const planet = await this.swapiService.getPlanet(idPlanet);
+      this.onPlanetLoaded(planet);
+    } catch (err) {
+      this.onError(err);
+    } finally {
+      this.setState({ loading: false });
+    }
   };
 
   render() {

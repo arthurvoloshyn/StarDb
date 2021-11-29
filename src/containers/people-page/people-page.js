@@ -4,7 +4,7 @@ import SwapiService from '../../services/swapi-service';
 
 import ItemList from '../../components/item-list/item-list';
 import Row from '../../components/row';
-import ErrorBoundry from '../../components/error-boundry';
+import ErrorBoundary from '../../components/error-boundary';
 
 import ItemDetails from '../item-details/item-details';
 
@@ -29,9 +29,9 @@ class PeoplePage extends Component {
     );
 
     const personDetails = (
-      <ErrorBoundry>
+      <ErrorBoundary>
         <ItemDetails personId={selectedPerson} />
-      </ErrorBoundry>
+      </ErrorBoundary>
     );
 
     return <Row left={itemList} right={personDetails} />;

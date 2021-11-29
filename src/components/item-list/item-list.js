@@ -12,8 +12,10 @@ const ItemList = ({ data, onItemSelected, children: renderLabel }) => {
     const { id } = item;
     const label = renderLabel(item);
 
+    const handleItemSelected = () => onItemSelected(id);
+
     return (
-      <li className="list-group-item" key={id} onClick={() => onItemSelected(id)}>
+      <li className="list-group-item" key={id} onClick={handleItemSelected}>
         {label}
       </li>
     );
@@ -22,14 +24,14 @@ const ItemList = ({ data, onItemSelected, children: renderLabel }) => {
   return <ul className="item-list list-group">{items}</ul>;
 };
 
-ItemList.defaultProps = {
-  onItemSelected: () => {}
-};
-
 ItemList.propTypes = {
   onItemSelected: PropTypes.func,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   children: PropTypes.func.isRequired
+};
+
+ItemList.defaultProps = {
+  onItemSelected: () => {}
 };
 
 const { getAllPeople } = new SwapiService();
