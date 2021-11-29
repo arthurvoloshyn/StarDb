@@ -1,13 +1,13 @@
 {
-  "main.css": "/StarDb/static/css/main.75216ac4.chunk.css",
-  "main.js": "/StarDb/static/js/main.e19b6066.chunk.js",
-  "main.js.map": "/StarDb/static/js/main.e19b6066.chunk.js.map",
+  "main.css": "/StarDb/static/css/main.37ca9542.chunk.css",
+  "main.js": "/StarDb/static/js/main.7716e0ab.chunk.js",
+  "main.js.map": "/StarDb/static/js/main.7716e0ab.chunk.js.map",
   "runtime~main.js": "/StarDb/static/js/runtime~main.6291c308.js",
   "runtime~main.js.map": "/StarDb/static/js/runtime~main.6291c308.js.map",
-  "static/js/2.e5c75611.chunk.js": "/StarDb/static/js/2.e5c75611.chunk.js",
-  "static/js/2.e5c75611.chunk.js.map": "/StarDb/static/js/2.e5c75611.chunk.js.map",
+  "static/js/2.7beb2f7c.chunk.js": "/StarDb/static/js/2.7beb2f7c.chunk.js",
+  "static/js/2.7beb2f7c.chunk.js.map": "/StarDb/static/js/2.7beb2f7c.chunk.js.map",
   "index.html": "/StarDb/index.html",
-  "precache-manifest.82e5a42209973d0f4012aeb8385912c3.js": "/StarDb/precache-manifest.82e5a42209973d0f4012aeb8385912c3.js",
+  "precache-manifest.a27c029036777ad880e30c6dd78f59ac.js": "/StarDb/precache-manifest.a27c029036777ad880e30c6dd78f59ac.js",
   "service-worker.js": "/StarDb/service-worker.js",
-  "static/css/main.75216ac4.chunk.css.map": "/StarDb/static/css/main.75216ac4.chunk.css.map"
+  "static/css/main.37ca9542.chunk.css.map": "/StarDb/static/css/main.37ca9542.chunk.css.map"
 }
